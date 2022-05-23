@@ -1,22 +1,11 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useCharacter } from "../hooks/useCharacter";
 
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-      }
-    }
-  }
-`;
+
 
 function CharacterList() {
-  const { error, data, loading } = useQuery(GET_CHARACTERS);
+  const {error, loading, data} = useCharacter();
 
-  console.log({ error, loading, data });
 
   if (loading) return <div>Loading....</div>;
   if (error) {
@@ -24,10 +13,11 @@ function CharacterList() {
   }
   return (
     <div>
+      {/* {data} */}
       {data.characters.results.map((character) => {
         return (
           <div key={character.id}>
-            <img src={character.image} />
+            <img src={character.image} alt="NOT LOADED" />
             <h2>{character.name}</h2>
           </div>
         );
