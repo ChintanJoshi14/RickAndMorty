@@ -10,15 +10,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// const client = new ApolloClient({
-//   uri: "https://spotify-api-graphql-console.herokuapp.com/",
-//   cache: new InMemoryCache(),
-//   fetchOptions: {
-//     mode: 'no-cors'
-//   },
-//   credentials: 'true'
-// })
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -29,25 +20,3 @@ root.render(
 );
 
 reportWebVitals();
-
-
-
-
-
-
-// import { SpotifyGraphQLClient } from "spotify-graphql/dist";
-// let config = SpotifyGraphQLClient({
-//   clientId: "211e5ba2a08c4fb19a6a749cdf1f10e3",
-//     clientSecret: "f23e41021c8945078b19cd757c0235fb",
-//     redirectUri: "http://localhost:3000/",
-//     accessToken: "accessToken"
-// })
-
-// const client = new ApolloClient({
-//   uri: "https://spotify-api-graphql-console.herokuapp.com/",
-//   cache: new InMemoryCache(),
-//   fetchOptions: {
-//     mode: 'no-cors'
-//   },
-//   // credentials: 'true'
-// })
